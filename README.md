@@ -13,6 +13,7 @@ El desarrollo del Laboratorio es el siguiente:
 
 Como arquitectura tenemos:
 
+![image1.jpeg](src%2Fmain%2Fresources%2Fimage1.jpeg)
 
 1. GET Static Method for REST Services:
    Implement a get() method that allows developers to define REST services using lambda functions.
@@ -20,11 +21,33 @@ Como arquitectura tenemos:
    get("/hello", (req, res) -> "hello world!");
    This feature will enable developers to define simple and clear routes within their applications, mapping URLs to specific lambda expressions that handle the requests and responses.
 
+![image2.jpeg](src%2Fmain%2Fresources%2Fimage2.jpeg)
+![image3.jpeg](src%2Fmain%2Fresources%2Fimage3.jpeg)
+![image4.jpeg](src%2Fmain%2Fresources%2Fimage4.jpeg)
+![image5.jpeg](src%2Fmain%2Fresources%2Fimage5.jpeg)
+![image6.jpeg](src%2Fmain%2Fresources%2Fimage6.jpeg)
+
+Así se visualizara: 
+
+![image7.jpeg](src%2Fmain%2Fresources%2Fimage7.jpeg)
+![image8.jpeg](src%2Fmain%2Fresources%2Fimage8.jpeg)
+![image9.jpeg](src%2Fmain%2Fresources%2Fimage9.jpeg)
+
 2. Query Value Extraction Mechanism:
    Develop a mechanism to extract query parameters from incoming requests and make them accessible within the REST services.
    Example Usage:
    get("/hello", (req, res) -> "hello " + req.getValues("name"));
    This functionality will facilitate the creation of dynamic and parameterized REST services, allowing developers to easily access and utilize query parameters within their service implementations.
+
+![image10.jpeg](src%2Fmain%2Fresources%2Fimage10.jpeg)
+![image11.jpeg](src%2Fmain%2Fresources%2Fimage11.jpeg)
+![image12.jpeg](src%2Fmain%2Fresources%2Fimage12.jpeg)
+![image13.jpeg](src%2Fmain%2Fresources%2Fimage13.jpeg)
+![image14.jpeg](src%2Fmain%2Fresources%2Fimage14.jpeg)
+
+Así se visualizara:
+
+![image15.jpeg](src%2Fmain%2Fresources%2Fimage15.jpeg)
 
 3. Static File Location Specification:
    Introduce a staticfiles() method that allows developers to define the folder where static files are located.

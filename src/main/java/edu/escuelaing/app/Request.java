@@ -8,7 +8,6 @@ public class Request {
 
     public Request(String queryString) {
         parameters = new HashMap<>();
-        // Aquí procesas el queryString para llenar el mapa de parámetros
         if (queryString != null) {
             String[] pairs = queryString.split("&");
             for (String pair : pairs) {

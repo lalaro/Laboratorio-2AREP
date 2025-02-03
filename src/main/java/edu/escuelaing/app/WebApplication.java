@@ -17,6 +17,8 @@ public class WebApplication {
         get("/app/e", (req, resp) -> {
             return String.valueOf(Math.E);});
 
+        //get("/hello", (req, res) -> "hello world!");
+
         HttpServer.main(args);
     }
 }

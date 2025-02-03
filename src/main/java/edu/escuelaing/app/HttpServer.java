@@ -10,7 +10,8 @@ import java.util.function.BiFunction;
 import java.util.HashMap;
 
 public class HttpServer {
-    private static Map<String, BiFunction<String, String, String>> servicios= new HashMap();
+    private static Map<String, BiFunction<Request, String, String>> servicios = new HashMap<>();
+
 
     public static void main(String[] args) throws IOException, URISyntaxException {
         ServerSocket serverSocket = null;
@@ -31,18 +32,24 @@ public class HttpServer {
                 System.err.println("Accept failed.");
                 System.exit(1);
             }
-            OutputStream out = clientSocket.getOutputStream();
-            BufferedReader in = new BufferedReader(
-                    new InputStreamReader(clientSocket.getInputStream())
-            );
-            String inputLine, outputLine;
 
+            OutputStream out = clientSocket.getOutputStream();
+            BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+
+            String inputLine;
             boolean isFirstLine = true;
             String file = "";
+            String queryString = "";
 
+            // Leer la primera línea de la solicitud
             while ((inputLine = in.readLine()) != null) {
                 if (isFirstLine) {
-                    file = inputLine.split(" ")[1];
+                    String[] parts = inputLine.split(" ");
+                    file = parts[1];
+                    if (file.contains("?")) {
+                        queryString = file.split("\\?")[1];
+                        file = file.split("\\?")[0];
+                    }
                     isFirstLine = false;
                 }
 
@@ -52,15 +59,17 @@ public class HttpServer {
                 }
             }
 
+            Request request = new Request(queryString);
+
             if (servicios.containsKey(file)) {
-                String response = processRequest(file, "");
+                String response = processRequest(file, request);
                 out.write(response.getBytes());
-            } else if (file.equals("/") || file.equals("/paginanew")) {
-                serveStaticFiles("/archive1.html", out);
+            } else if (file.equals("/hello")) {
+                String responseA = processRequestA(file, "");
+                out.write(responseA.getBytes());
             } else {
                 serveStaticFiles(file, out);
             }
-
 
             out.close();
             in.close();
@@ -69,14 +78,14 @@ public class HttpServer {
         serverSocket.close();
     }
 
-    public static void get(String route, BiFunction<String, String, String> f){
+    public static void get(String route, BiFunction<Request, String, String> f) {
         servicios.put(route, f);
     }
+
 
     public static void staticfiles(String path){
 
     }
-
 
     private static void serveStaticFiles(String filePath, OutputStream out) throws IOException {
         File requestedFile = new File("src/main/resources/archivesPractice" + filePath);
@@ -168,7 +177,6 @@ public class HttpServer {
         }
     }
 
-
     /*private static String helloRestService(String path, String query){
         String response = "HTTP/1.1 200 OK\r\n"
                 + "Content-Type: application/json\r\n"
@@ -179,15 +187,23 @@ public class HttpServer {
         return response;
     }*/
 
-    private static String processRequest(String path, String query) {
-        System.out.println("Query: " + query);
-        BiFunction<String, String, String> servicio = servicios.get(path);
+    private static String processRequestA(String path, String query) {
+        String responseBody = "HTTP/1.1 200 OK\r\n"
+                + "Content-Type: application/json\r\n"
+                + "\r\n"
+                + "{\"message\": \"Hello World!\"}";
+        return responseBody;
+    }
+
+
+    private static String processRequest(String path, Request request) {
+        BiFunction<Request, String, String> servicio = servicios.get(path);
 
         if (servicio != null) {
             String responseBody = "HTTP/1.1 200 OK\r\n"
                     + "Content-Type: application/json\r\n"
                     + "\r\n"
-                    + "{\"result\": \"" + servicio.apply(path, query) + "\"}"; // Corrected JSON
+                    + "{\"result\": \"" + servicio.apply(request, "") + "\"}"; // Corrected JSON
             return responseBody;
         } else {
             return "HTTP/1.1 404 Not Found\r\n\r\n{\"error\": \"Service not found\"}"; // 404 response

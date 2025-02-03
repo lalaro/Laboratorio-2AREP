@@ -1,52 +1,97 @@
-# Título del Proyecto
+# Lab2 AREP
 
-Un párrafo con la descripción del proyecto va aquí.
-
+Este proyecto tiene como objetivo mejorar un servidor web existente, que actualmente admite archivos HTML, JavaScript, CSS e imágenes, al convertirlo en un marco web completamente funcional. Este marco permitirá el desarrollo de aplicaciones web con servicios REST de backend. El nuevo marco proporcionará a los desarrolladores herramientas para definir servicios REST mediante funciones lambda, administrar valores de consulta dentro de solicitudes y especificar la ubicación de archivos estáticos.
 ## Comenzando
 
-Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas. Consulta la sección de despliegue para obtener notas sobre cómo implementar el proyecto en un sistema en vivo.
+Se debe clonar el proyecto localmente con el comando:
+
+` git clone https://github.com/lalaro/Lab1AREP.git`
+
+Y luego revisar las intrucciones a continuación para el manejo de soluciones del proyecto.
+
+El desarrollo del Laboratorio es el siguiente:
+
+Como arquitectura tenemos:
+
+
+1. GET Static Method for REST Services:
+   Implement a get() method that allows developers to define REST services using lambda functions.
+   Example Usage:
+   get("/hello", (req, res) -> "hello world!");
+   This feature will enable developers to define simple and clear routes within their applications, mapping URLs to specific lambda expressions that handle the requests and responses.
+
+2. Query Value Extraction Mechanism:
+   Develop a mechanism to extract query parameters from incoming requests and make them accessible within the REST services.
+   Example Usage:
+   get("/hello", (req, res) -> "hello " + req.getValues("name"));
+   This functionality will facilitate the creation of dynamic and parameterized REST services, allowing developers to easily access and utilize query parameters within their service implementations.
+
+3. Static File Location Specification:
+   Introduce a staticfiles() method that allows developers to define the folder where static files are located.
+   Example Usage:
+   staticfiles("webroot/public");
+   The framework will then look for static files in the specified directory, such as target/classes/webroot/public, making it easier for developers to organize and manage their application's static resources.
+
+4. Additional Tasks:
+   Build an example demonstrating how applications would be developed on your server.
+
 
 ### Prerrequisitos
 
-Qué necesitas instalar para usar el software y cómo instalarlo.
+Se necesita de Maven (La más reciente) y Java 21, la instalación debe realizarse desde las paginas oficiales de cada programa.
 
 
 ### Instalación
 
-Una serie de pasos que te guiarán para configurar un entorno de desarrollo.
+Para Maven debe irse a https://maven.apache.org/download.cgi, descargar la versión más nueva que allá de Maven (En este caso tenemos la versión 3.9.6) y agregarse en la carpeta de Program Files, luego se hace la respectiva configuración de variables de entorno según la ubicación que tenemos para el archivo de instalación, tanto de MAVEN_HOME y de Path.
+Luego revisamos que haya quedado bien configurado con el comando para Windows:
 
-Describe el paso que se realizará.
+` mvn - v `
+o
+` mvn -version `
 
+Para Java debe irse a https://www.oracle.com/java/technologies/downloads/?er=221886, descargar la versión 21 de Java y agregarse en la carpeta de Program Files, luego se hace la respectiva configuración de variables de entorno según la ubicación que tenemos para el archivo de instalación, tanto de JAVA_HOME y de Path.
+Luego revisamos que haya quedado bien configurado con el comando para Windows:
 
-Y repite:
-
-
-Finaliza con un ejemplo de cómo obtener datos del sistema o usarlo para una pequeña demostración.
+` java -version `
 
 ## Ejecutando las pruebas
 
-Explica cómo ejecutar las pruebas automatizadas para este sistema.
+Podemos Abrir en terminal el proyecto y ejecutar las pruebas desde el PowerShell, en el caso de Windows. Y ejecutamos el comando:
+
+` mvn test `
+
+O de igual forma en el ID que deseemos.
+
+Así se vera:
+
 
 ### Desglose en pruebas de extremo a extremo
 
-Explica qué prueban estas pruebas y por qué.
-
-
 ### Y pruebas de estilo de código
-
-Explica qué prueban estas pruebas y por qué.
 
 
 
 ## Despliegue
 
-Agrega notas adicionales sobre cómo implementar esto en un sistema en vivo.
+Podemos Abrir en terminal el proyecto y compilar y empaquetar el proyecto desde el PowerShell, en el caso de Windows. Y ejecutamos los comandos:
+
+` mvn clean `
+
+` mvn compile `
+
+` mvn package `
+
+O de igual forma en el ID que deseemos.
+
+Así se vera:
+
+
 
 ## Construido con
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web utilizado.
 * [Maven](https://maven.apache.org/) - Gestión de dependencias.
-* [ROME](https://rometools.github.io/rome/) - Utilizado para generar feeds RSS.
+* [Java](https://www.java.com/es/) - Versionamiento en Java.
 
 ## Contribuyendo
 
@@ -54,13 +99,11 @@ Por favor, lee [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b2467940295
 
 ## Versionado
 
-Usamos [SemVer](http://semver.org/) para el versionado. Para las versiones disponibles, consulta los [tags en este repositorio](https://github.com/your/project/tags).
+Usamos [SemVer](http://semver.org/) para el versionado.
 
 ## Autores
 
-* **Billie Thompson** - *Trabajo inicial* - [PurpleBooth](https://github.com/PurpleBooth)
-
-Consulta también la lista de [colaboradores](https://github.com/your/project/contributors) que participaron en este proyecto.
+* **Laura Valentina Rodríguez Ortegón** - *Lab2 AREP* - [Repositorio](https://github.com/lalaro/Laboratorio-2AREP.git)
 
 ## Licencia
 
@@ -68,6 +111,6 @@ Este proyecto está licenciado bajo la Licencia MIT - consulta el archivo [LICEN
 
 ## Reconocimientos
 
-* Agradecimientos a cualquiera cuyo código fue utilizado
-* Inspiración
-* Etc
+* Agradecimientos a la Escuela Colombiana de Ingeniería
+* La documentación de Git Hub
+* Al profesor Luis Daniel Benavides

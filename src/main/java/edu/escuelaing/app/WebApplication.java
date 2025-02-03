@@ -10,7 +10,7 @@ public class WebApplication {
 
     public static void main(String[] args) throws IOException, URISyntaxException {
         staticfiles("/webroot");
-        //get("/hello", (req, resp) -> "Hello " + req.getValues("name"));
+        get("/hello", (req, resp) -> "Hello " + req.getValues("name"));
         get("/app/pi", (req, resp) -> {
             return String.valueOf(Math.PI);
         });

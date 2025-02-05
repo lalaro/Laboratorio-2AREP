@@ -4,14 +4,13 @@ import java.net.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.function.Supplier;
 import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.HashMap;
+import edu.escuelaing.app.DefaultResponse;
 
 public class HttpServer {
     private static Map<String, BiFunction<Request, String, String>> servicios = new HashMap<>();
-
 
     public static void main(String[] args) throws IOException, URISyntaxException {
         ServerSocket serverSocket = null;
@@ -41,7 +40,6 @@ public class HttpServer {
             String file = "";
             String queryString = "";
 
-            // Leer la primera línea de la solicitud
             while ((inputLine = in.readLine()) != null) {
                 if (isFirstLine) {
                     String[] parts = inputLine.split(" ");
@@ -82,9 +80,7 @@ public class HttpServer {
         servicios.put(route, f);
     }
 
-
-    public static void staticfiles(String path){
-
+    public static void staticfiles(String path) {
     }
 
     private static void serveStaticFiles(String filePath, OutputStream out) throws IOException {
@@ -105,59 +101,7 @@ public class HttpServer {
                 }
             }
         } else {
-            outputLine = "HTTP/1.1 200 OK\r\n"
-                    + "Content-Type: text/html\r\n"+
-                    "\r\n" +
-                    "<!DOCTYPE html>"
-                    + "<html>"
-                    + "<head>"
-                    + "    <title>Form Example</title>"
-                    + "    <meta charset=\"UTF-8\">"
-                    + "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
-                    + "</head>"
-                    + "<body>"
-                    + "    <h1>Form with GET</h1>"
-                    + "    <form action=\"/hello\">"
-                    + "        <label for=\"name\">Name:</label><br>"
-                    + "        <input type=\"text\" id=\"name\" name=\"name\" value=\"John\"><br><br>"
-                    + "        <input type=\"button\" value=\"Submit\" onclick=\"loadGetMsg()\">"
-                    + "    </form> "
-                    + "    <div id=\"getrespmsg\"></div>"
-                    + ""
-                    + "    <script>"
-                    + "        function loadGetMsg() {"
-                    + "            let nameVar = document.getElementById(\"name\").value;"
-                    + "            const xhttp = new XMLHttpRequest();"
-                    + "            xhttp.onload = function() {"
-                    + "                document.getElementById(\"getrespmsg\").innerHTML ="
-                    + "                this.responseText;"
-                    + "            }"
-                    + "            xhttp.open(\"GET\", \"/hello?name=\"+nameVar);"
-                    + "            xhttp.send();"
-                    + "        }"
-                    + "    </script>"
-                    + ""
-                    + "    <h1>Form with POST</h1>"
-                    + "    <form action=\"/hellopost\">"
-                    + "        <label for=\"postname\">Name:</label><br>"
-                    + "        <input type=\"text\" id=\"postname\" name=\"name\" value=\"John\"><br><br>"
-                    + "        <input type=\"button\" value=\"Submit\" onclick=\"loadPostMsg(postname)\">"
-                    + "    </form>"
-                    + ""
-                    + "    <div id=\"postrespmsg\"></div>"
-                    + ""
-                    + "    <script>"
-                    + "        function loadPostMsg(name){"
-                    + "            let url = \"/hellopost?name=\" + name.value;"
-                    + ""
-                    + "            fetch (url, {method: 'POST'})"
-                    + "                .then(x => x.text())"
-                    + "                .then(y => document.getElementById(\"postrespmsg\").innerHTML = y);"
-                    + "        }"
-                    + "    </script>"
-                    + "</body>"
-                    + "</html>";
-            out.write(outputLine.getBytes());
+            DefaultResponse.generateFormResponse(out);
         }
     }
 
@@ -177,16 +121,6 @@ public class HttpServer {
         }
     }
 
-    /*private static String helloRestService(String path, String query){
-        String response = "HTTP/1.1 200 OK\r\n"
-                + "Content-Type: application/json\r\n"
-                + "\r\n"
-                //+ "{\"name\": \"John\", \"age\":30, \"car\":null}";
-                //+ "{\"PI\":"+ servunico.get() +"}";
-                + "{\"PI\":"+ servunico.apply(",") +"}";
-        return response;
-    }*/
-
     private static String processRequestA(String path, String query) {
         String responseBody = "HTTP/1.1 200 OK\r\n"
                 + "Content-Type: application/json\r\n"
@@ -194,7 +128,6 @@ public class HttpServer {
                 + "{\"message\": \"Hello World!\"}";
         return responseBody;
     }
-
 
     private static String processRequest(String path, Request request) {
         BiFunction<Request, String, String> servicio = servicios.get(path);

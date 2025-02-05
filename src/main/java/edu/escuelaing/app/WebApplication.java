@@ -2,7 +2,6 @@ package edu.escuelaing.app;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
-
 import static edu.escuelaing.app.HttpServer.staticfiles;
 import static edu.escuelaing.app.HttpServer.get;
 

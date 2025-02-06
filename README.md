@@ -55,13 +55,46 @@ Así se visualizara:
    staticfiles("webroot/public");
    The framework will then look for static files in the specified directory, such as target/classes/webroot/public, making it easier for developers to organize and manage their application's static resources.
 
+![image16.jpeg](src/main/resources/image16.jpeg)
+![image17.jpeg](src/main/resources/image17.jpeg)
+![image18.jpeg](src/main/resources/image18.jpeg)
+
 4. Additional Tasks:
    Build an example demonstrating how applications would be developed on your server.
 
+Finalmente así se veran las busquedas:
+
+Para http://localhost:35000/index.html
+
+![image19.jpeg](src/main/resources/image19.jpeg)
+
+Para http://localhost:35000/index.html, dando le click al botón "Haz click para saber más"
+
+![image20.jpeg](src/main/resources/image20.jpeg)
+
+Para http://localhost:35000/archive1.html
+
+![image21.jpeg](src/main/resources/image21.jpeg)
+
+Para http://localhost:35000/hi
+
+![image22.jpeg](src/main/resources/image22.jpeg)
+
+Para http://localhost:35000/app/pi
+
+![image23.jpeg](src/main/resources/image23.jpeg)
+
+Para http://localhost:35000/app/e
+
+![image24.jpeg](src/main/resources/image24.jpeg)
+
+http://localhost:35000/hello?name=Doraemon o cualquier otro nombre que se desee agregar
+
+![image26.jpeg](src/main/resources/image26.jpeg)
 
 ### Prerrequisitos
 
-Se necesita de Maven (La más reciente) y Java 21, la instalación debe realizarse desde las paginas oficiales de cada programa.
+Se necesita de Maven (La versión más reciente) y Java 21, la instalación debe realizarse desde las paginas oficiales de cada programa.
 
 
 ### Instalación
@@ -88,6 +121,7 @@ O de igual forma en el ID que deseemos.
 
 Así se vera:
 
+![image27.jpeg](src/main/resources/image27.jpeg)
 
 ### Desglose en pruebas de extremo a extremo
 
@@ -109,7 +143,8 @@ O de igual forma en el ID que deseemos.
 
 Así se vera:
 
-
+![image28.jpeg](src/main/resources/image28.jpeg)
+![image29.jpeg](src/main/resources/image29.jpeg)
 
 ## Construido con
 

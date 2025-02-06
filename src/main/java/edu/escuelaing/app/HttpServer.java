@@ -12,6 +12,7 @@ import edu.escuelaing.app.DefaultResponse;
 public class HttpServer {
     private static Map<String, BiFunction<Request, String, String>> servicios = new HashMap<>();
 
+    private static String staticFilePath = "target/classes/archivesPractice"; // o se puede usar la ruta src/main/resources/archivesPractice
     public static void main(String[] args) throws IOException, URISyntaxException {
         ServerSocket serverSocket = null;
         try {
@@ -81,13 +82,15 @@ public class HttpServer {
     }
 
     public static void staticfiles(String path) {
+        staticFilePath = path;
     }
 
     private static void serveStaticFiles(String filePath, OutputStream out) throws IOException {
-        File requestedFile = new File("src/main/resources/archivesPractice" + filePath);
-        String outputLine = "";
+        String basePath = "target/classes/archivesPractice"; // o se puede usar la ruta src/main/resources/archivesPractice
+        File requestedFile = new File(basePath + filePath);
+        String contentType = determineContentType(filePath);
+
         if (requestedFile.exists() && requestedFile.isFile()) {
-            String contentType = determineContentType(filePath);
             String header = "HTTP/1.1 200 OK\r\n" +
                     "Content-Type: " + contentType + "\r\n" +
                     "\r\n";
@@ -101,9 +104,11 @@ public class HttpServer {
                 }
             }
         } else {
-            DefaultResponse.generateFormResponse(out);
+            String notFoundResponse = "HTTP/1.1 404 Not Found\r\n\r\nArchivo no encontrado";
+            out.write(notFoundResponse.getBytes());
         }
     }
+
 
     private static String determineContentType(String file) {
         if (file.endsWith(".png")) {

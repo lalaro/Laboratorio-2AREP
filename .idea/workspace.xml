@@ -5,11 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6685b3eb-6a1c-4698-b56d-b57d8aa816a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/edu/escuelaing/app/WebServerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image16.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image17.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image18.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image19.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image20.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image21.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image22.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image23.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image24.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image25.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image26.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image27.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image28.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/image29.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/escuelaing/app/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/app/HttpServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/escuelaing/app/WebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/app/WebApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/escuelaing/app/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/archivesPractice/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/archivesPractice/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/escuelaing/app/WebServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/escuelaing/app/WebServerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,25 +53,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HttpServer.executor": "Run",
-    "Application.WebApplication.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JUnit.AppTest.executor": "Run",
-    "JUnit.WebServerTest.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/laura/Music/AREP/Laboratorio-2AREP",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HttpServer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.WebApplication.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JUnit.AppTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WebServerTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/laura/Music/AREP/Laboratorio-2AREP&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\laura\Music\AREP\Laboratorio-2AREP\src\main\resources" />

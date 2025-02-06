@@ -15,6 +15,13 @@ Como arquitectura tenemos:
 
 ![image1.jpeg](src%2Fmain%2Fresources%2Fimage1.jpeg)
 
+Explicación de arquitectura: 
+
+Este diagrama representa una arquitectura de sistema distribuido que involucra un cliente web, un servidor HTTP y un servidor backend, todos comunicándose a través de una red local. El cliente web realiza solicitudes al servidor HTTP, quien a su vez puede solicitar datos JSON al servidor backend. Además, el servidor HTTP sirve archivos estáticos (HTML, CSS, JS, PNG, JPEG) directamente al cliente.
+En el diagrama se establece el puerto 35000 utilizado para la comunicación y la especificación de la ruta GET. El Local Server indica que todos los componentes residen en el mismo entorno local.
+
+Desarrollo del lab:
+
 1. GET Static Method for REST Services:
    Implement a get() method that allows developers to define REST services using lambda functions.
    Example Usage:
@@ -122,6 +129,7 @@ O de igual forma en el ID que deseemos.
 Así se vera:
 
 ![image27.jpeg](src/main/resources/image27.jpeg)
+![image31.jpeg](src/main/resources/image31.jpeg)
 
 ### Desglose en pruebas de extremo a extremo
 
@@ -185,6 +193,10 @@ Así se vera:
 
 ![image28.jpeg](src/main/resources/image28.jpeg)
 ![image29.jpeg](src/main/resources/image29.jpeg)
+
+Es importante aclarar que para obtener todas las peticiones presentadas en los ejemplos anteriores, se debe compilar la clase **WebApplication.java**, ya que es la clase principal.
+
+![image30.jpeg](src/main/resources/image30.jpeg)
 
 ## Construido con
 

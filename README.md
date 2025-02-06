@@ -125,9 +125,49 @@ Así se vera:
 
 ### Desglose en pruebas de extremo a extremo
 
+1. testHelloResponse
+   Qué prueba: Este test verifica que la ruta /hello con un parámetro de consulta name=John retorne la respuesta correcta con el estado 200 OK.
+   Por qué la prueba: Es una prueba fundamental para asegurar que la ruta /hello del servidor responde correctamente a las solicitudes con parámetros, devolviendo una respuesta esperada que contenga un mensaje personalizado. Si falla, indica que el servidor no está manejando adecuadamente los parámetros en las solicitudes GET.
+
+2. testNotFoundResponse
+   Qué prueba: Este test verifica que el servidor retorne un código de estado 404 cuando se hace una solicitud a una ruta inexistente, como /notfound.
+   Por qué la prueba: Es importante comprobar que el servidor responde adecuadamente a las solicitudes a rutas que no existen. Un fallo aquí podría significar que el servidor no maneja correctamente los errores de rutas no encontradas.
+
+3. testEmptyQueryString
+   Qué prueba: Este test verifica que cuando se recibe una cadena de consulta vacía, el servidor no encuentre valores para los parámetros y devuelva null para todos los parámetros solicitados. 
+   Por qué la prueba: Asegura que el servidor maneje correctamente las solicitudes sin parámetros en la cadena de consulta. Si no se manejan correctamente, podría causar errores o resultados inesperados.
+
+4. testDuplicateParameters
+   Qué prueba: Este test verifica que si un parámetro de consulta aparece varias veces, como name=John&name=Alice, el servidor debe devolver el último valor de ese parámetro (Alice).
+   Por qué la prueba: Es fundamental para garantizar que el servidor maneje adecuadamente los parámetros duplicados. Si el servidor no lo hace bien, podría generar resultados incorrectos.
+
+5. testGenerateFormResponse
+   Qué prueba: Este test verifica que la respuesta generada por DefaultResponse.generateFormResponse() comience con el estado 200 OK y contenga un formulario HTML con las rutas correctas (/hello y /hellopost), además de las funciones JavaScript necesarias.
+   Por qué la prueba: Es una prueba importante para asegurar que el servidor devuelva la respuesta correcta con un formulario HTML y el JavaScript necesario para la interacción con el servidor. Un fallo aquí indicaría un problema con la generación de la respuesta HTML.
+
+6. testSingleParameter
+   Qué prueba: Este test verifica que, cuando se recibe un solo parámetro de consulta, como name=John, el servidor devuelva el valor correcto de ese parámetro.
+   Por qué la prueba: Es una prueba básica para asegurar que el servidor maneja correctamente los parámetros simples en la cadena de consulta. Si falla, podría indicar un problema con el manejo de parámetros.
+
+7. testSpecialCharactersInParameters
+   Qué prueba: Este test verifica que los parámetros de consulta que contienen caracteres especiales, como espacios o caracteres codificados (por ejemplo, %20), sean procesados correctamente.
+   Por qué la prueba: Es crucial asegurarse de que el servidor pueda manejar caracteres especiales en los parámetros de consulta. Un error en esta prueba podría llevar a que los parámetros no sean interpretados correctamente, afectando la funcionalidad.
+
+8. testMultipleParameters
+   Qué prueba: Este test verifica que el servidor pueda manejar correctamente múltiples parámetros en la cadena de consulta y devolver los valores esperados.
+   Por qué la prueba: Verifica que el servidor maneje correctamente solicitudes con múltiples parámetros, lo cual es común en muchas aplicaciones. Si falla, podría indicar que el servidor no procesa correctamente las consultas complejas.
+
+9. testNullQueryString
+   Qué prueba: Este test verifica que, cuando se recibe una cadena de consulta nula (null), el servidor no genere errores y devuelva null para los parámetros solicitados.
+   Por qué la prueba: Esta prueba asegura que el servidor maneje adecuadamente las solicitudes con cadenas de consulta nulas. Si no se maneja correctamente, podría generar excepciones o comportamientos inesperados.
+
+10. testGenerateFormResponse2
+    Qué prueba: Este test verifica que la respuesta generada por DefaultResponse.generateFormResponse() contiene la estructura HTML básica, los formularios adecuados y las funciones JavaScript necesarias, similar a la prueba testGenerateFormResponse.
+    Por qué la prueba: Asegura que el servidor genera correctamente el contenido HTML y JavaScript para interactuar con el cliente. Un fallo podría indicar problemas en la generación de respuestas HTML, lo que afectaría la interacción con el cliente.
+
 ### Y pruebas de estilo de código
 
-
+Las pruebas en el conjunto de tests se diseñaron para asegurar que el servidor web se comporte correctamente en diversas situaciones comunes y posibles escenarios de uso. Se verifica que las rutas respondan correctamente, manejando tanto solicitudes válidas como inválidas. Las pruebas también garantizan que el servidor procese adecuadamente los parámetros de consulta, incluyendo casos como parámetros duplicados, especiales o vacíos. Además, se valida la correcta generación de respuestas HTML con formularios interactivos y funciones JavaScript necesarias para la comunicación con el servidor. Estas pruebas son esenciales para confirmar que el servidor pueda manejar adecuadamente tanto las solicitudes simples como las más complejas, asegurando su estabilidad, fiabilidad y capacidad para ofrecer una experiencia coherente al usuario.
 
 ## Despliegue
 

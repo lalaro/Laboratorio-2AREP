@@ -104,8 +104,7 @@ public class HttpServer {
                 }
             }
         } else {
-            String notFoundResponse = "HTTP/1.1 404 Not Found\r\n\r\nArchivo no encontrado";
-            out.write(notFoundResponse.getBytes());
+            DefaultResponse.generateFormResponse(out);
         }
     }
 

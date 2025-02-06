@@ -5,26 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6685b3eb-6a1c-4698-b56d-b57d8aa816a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image16.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image17.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image18.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image19.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image20.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image21.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image22.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image23.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image24.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image25.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image26.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image27.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image28.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/image29.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/escuelaing/app/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/app/HttpServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/escuelaing/app/WebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/escuelaing/app/WebApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/archivesPractice/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/archivesPractice/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/edu/escuelaing/app/WebServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/escuelaing/app/WebServerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
